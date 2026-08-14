@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "al_entrar_en_cama": {
+      "trigger": "minecraft:slept_in_bed"
+    }
+  },
+  "rewards": {
+    "function": "casual:bloquear_cama"
+  }
+}
