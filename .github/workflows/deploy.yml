@@ -19,7 +19,7 @@ jobs:
           zip -r datapack_casual.zip data pack.mcmeta pack.png -x "*.git*" "*.github*"
 
       - name: Publicar en CurseForge y Modrinth
-        uses: hypherionmc/mod-publisher@v2
+        uses: HypherionSA/mod-publisher@v2
         with:
           # Claves secretas de GitHub
           curseforge-auth-token: ${{ secrets.CURSEFORGE_TOKEN }}
