@@ -37,9 +37,9 @@ jobs:
           curseforge-id: '1651937'
           modrinth-id: 'everyday-wear'
 
-          # Configuración del archivo dinámica unificada
-          files: 'everyday-wear-${{ github.event.inputs.version_number || "1.0.0" }}.zip'
-          version: '${{ github.event.inputs.version_number || "1.0.0" }}'
+          # CORREGIDO: Comillas dobles fuera, comillas simples dentro de ${{ }}
+          files: "everyday-wear-${{ github.event.inputs.version_number || '1.0.0' }}.zip"
+          version: "${{ github.event.inputs.version_number || '1.0.0' }}"
           version-type: 'release' # Puede ser: release, beta, alpha
 
           # Compatibilidad corregida para la versión de Minecraft
