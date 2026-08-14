@@ -30,7 +30,7 @@ jobs:
           modrinth-id: 'everyday-wear'
 
           # Configuración del archivo
-          files: 'everyday-wear.zip'
+          files: 'datapack_casual.zip' # <-- CORREGIDO: Ahora coincide exactamente con el nombre de arriba
           version: '1.0.0'
           version-type: 'release' # Puede ser: release, beta, alpha
 
