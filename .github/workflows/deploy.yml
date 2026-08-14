@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - [cite_start]releases # Solo se activa al hacer push o merge a 'releases' [cite: 344]
+  workflow_dispatch: # <-- Esto habilita el botón manual en GitHub
+    push:
+      branches:
+        - releases # Se activa automáticamente al subir a 'releases'
 
 jobs:
   deploy:
