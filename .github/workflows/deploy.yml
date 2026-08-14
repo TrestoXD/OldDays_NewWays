@@ -3,7 +3,7 @@ name: Publicar Datapack Automatizado
 on:
   push:
     branches:
-      - releases # Solo se activa cuando subes o haces un merge hacia 'releases'
+      - [cite_start]releases # Solo se activa al hacer push o merge a 'releases' [cite: 344]
 
 jobs:
   deploy:
@@ -11,28 +11,28 @@ jobs:
 
     steps:
       - name: Descargar el código del repositorio
-        uses: actions/checkout@v4
+        [cite_start]uses: actions/checkout@v4 [cite: 345]
 
       - name: Crear archivo .ZIP del Datapack
         run: |
-          # Empaqueta la carpeta data, el mcmeta y la imagen del pack ignorando archivos de Git
-          zip -r datapack_casual.zip data pack.mcmeta pack.png -x "*.git*" "*.github*"
+          # Empaqueta la carpeta data, pack.mcmeta e imagen ignorando carpetas de Git
+          zip -r datapack_casual.zip data pack.mcmeta pack.png -x "*.git*" "*.github*" [cite: 346]
 
       - name: Publicar en CurseForge y Modrinth
-        uses: HypherionSA/mod-publisher@v2
+        uses: FirstDarkDev/modpublisher@v2
         with:
           # Claves secretas de GitHub
-          curseforge-auth-token: ${{ secrets.CURSEFORGE_TOKEN }}
-          modrinth-auth-token: ${{ secrets.MODRINTH_TOKEN }}
+          [cite_start]curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }} [cite: 344, 346]
+          [cite_start]modrinth-token: ${{ secrets.MODRINTH_TOKEN }} [cite: 344, 347]
 
           # IDs de tus proyectos (Cámbialos por los tuyos)
           curseforge-id: '1651937'
           modrinth-id: 'everyday-wear'
-
+          
           # Configuración del archivo
-          files: 'casual.zip'
+          files: 'datapack_casual.zip'
           version-type: 'release'        # Puede ser: release, beta, alpha
 
-          # Compatibilidad de Minecraft
+          # Compatibilidad
           game-versions: '26.2'        # Cambia a la versión objetivo de tu datapack
           loaders: 'datapack'
