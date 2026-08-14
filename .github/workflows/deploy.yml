@@ -1,13 +1,10 @@
 name: Publicar Datapack Automatizado
 
 on:
+  workflow_dispatch: # <-- Esto habilita el botón manual en GitHub
   push:
     branches:
-      - [cite_start]releases # Solo se activa al hacer push o merge a 'releases' [cite: 344]
-  workflow_dispatch: # <-- Esto habilita el botón manual en GitHub
-    push:
-      branches:
-        - releases # Se activa automáticamente al subir a 'releases'
+      - releases # Se activa automáticamente al hacer push o merge a 'releases'
 
 jobs:
   deploy:
@@ -15,21 +12,21 @@ jobs:
 
     steps:
       - name: Descargar el código del repositorio
-        [cite_start]uses: actions/checkout@v4 [cite: 345]
+        uses: actions/checkout@v4
 
       - name: Crear archivo .ZIP del Datapack
         run: |
           # Empaqueta la carpeta data, pack.mcmeta e imagen ignorando carpetas de Git
-          zip -r datapack_casual.zip data pack.mcmeta pack.png -x "*.git*" "*.github*" [cite: 346]
+          zip -r datapack_casual.zip data pack.mcmeta pack.png -x "*.git*" "*.github*"
 
       - name: Publicar en CurseForge y Modrinth
-        uses: FirstDarkDev/modpublisher@v2
+        uses: FirstDarkDev/modpublisher@v1
         with:
           # Claves secretas de GitHub
-          [cite_start]curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }} [cite: 344, 346]
-          [cite_start]modrinth-token: ${{ secrets.MODRINTH_TOKEN }} [cite: 344, 347]
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
 
-          # IDs de tus proyectos (Cámbialos por los tuyos)
+          # IDs de tus proyectos
           curseforge-id: '1651937'
           modrinth-id: 'everyday-wear'
           
@@ -38,5 +35,5 @@ jobs:
           version-type: 'release'        # Puede ser: release, beta, alpha
 
           # Compatibilidad
-          game-versions: '26.2'        # Cambia a la versión objetivo de tu datapack
+          game-versions: '1.21.4'
           loaders: 'datapack'
