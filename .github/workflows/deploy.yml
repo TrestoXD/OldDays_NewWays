@@ -9,7 +9,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Descargar el código del repositorio
         uses: actions/checkout@v4
@@ -20,7 +19,7 @@ jobs:
           zip -r datapack_casual.zip data pack.mcmeta pack.png -x "*.git*" "*.github*"
 
       - name: Publicar en CurseForge y Modrinth
-        uses: FirstDarkDev/modpublisher@v1
+        uses: Kirbycope/mc-publish@v3
         with:
           # Claves secretas de GitHub
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
@@ -29,11 +28,11 @@ jobs:
           # IDs de tus proyectos
           curseforge-id: '1651937'
           modrinth-id: 'everyday-wear'
-          
+
           # Configuración del archivo
           files: 'datapack_casual.zip'
-          version-type: 'release'        # Puede ser: release, beta, alpha
+          version-type: 'release' # Puede ser: release, beta, alpha
 
           # Compatibilidad
-          game-versions: '1.21.4'
+          game-versions: '26.2'
           loaders: 'datapack'
