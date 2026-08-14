@@ -26,8 +26,8 @@ jobs:
           modrinth-auth-token: ${{ secrets.MODRINTH_TOKEN }}
 
           # IDs de tus proyectos (Cámbialos por los tuyos)
-          curseforge-id: '1234567'       # Reemplaza con tu ID numérico de CurseForge
-          modrinth-id: 'abc123xyz'       # Reemplaza con tu Project ID o Slug de Modrinth
+          curseforge-id: '1651937'
+          modrinth-id: 'everyday-wear'
 
           # Configuración del archivo
           files: 'datapack_casual.zip'
