@@ -1,5 +1,4 @@
 name: Publicar Datapack Automatizado
-
 on:
   workflow_dispatch:
     inputs:
@@ -7,9 +6,10 @@ on:
         description: 'Número de versión del Datapack (ej. 1.1)'
         required: true
         default: '1.1'
-  push:
-    branches:
-      - releases
+      changelog:
+        description: 'Notas de la versión (Changelog)'
+        required: true
+        default: 'Corrección de errores y mejoras generales.'
 
 jobs:
   deploy:
@@ -20,10 +20,7 @@ jobs:
 
       - name: Crear archivo .ZIP del Datapack
         run: |
-          # Si se activa por push usa '1.0' por defecto, si es manual usa el input
-          VERSION="${{ github.event.inputs.version_number || '1.1' }}"
-          
-          # Empaqueta usando el nombre dinámico: everyday-wear-1.1.zip
+          VERSION="${{ github.event.inputs.version_number }}"
           zip -r "everyday-wear-${VERSION}.zip" data pack.mcmeta pack.png -x "*.git*" "*.github*"
 
       - name: Publicar en CurseForge y Modrinth
@@ -32,16 +29,19 @@ jobs:
           # Claves secretas de GitHub
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-
+          
           # IDs de tus proyectos
           curseforge-id: '1651937'
           modrinth-id: 'everyday-wear'
-
-          # CORREGIDO: Comillas dobles fuera, comillas simples dentro de ${{ }}
-          files: "everyday-wear-${{ github.event.inputs.version_number || '1.1' }}.zip"
-          version: "${{ github.event.inputs.version_number || '1.1' }}"
-          version-type: 'release' # Puede ser: release, beta, alpha
-
-          # Compatibilidad corregida para la versión de Minecraft
-          game-versions: '26.2'
+          
+          # Archivos y versiones
+          files: "everyday-wear-${{ github.event.inputs.version_number }}.zip"
+          version: "${{ github.event.inputs.version_number }}"
+          version-type: 'release' 
+          
+          # NUEVO: Envía el texto ingresado en la interfaz al changelog de las plataformas
+          changelog: "${{ github.event.inputs.changelog }}"
+          
+          # Versiones de Minecraft y cargador
+          game-versions: '1.21'
           loaders: 'datapack'
