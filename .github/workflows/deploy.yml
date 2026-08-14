@@ -19,7 +19,7 @@ jobs:
           zip -r datapack_casual.zip data pack.mcmeta pack.png -x "*.git*" "*.github*"
 
       - name: Publicar en CurseForge y Modrinth
-        uses: Kirbycope/mc-publish@v3
+        uses: Kir-Antipov/mc-publish@v3
         with:
           # Claves secretas de GitHub
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
