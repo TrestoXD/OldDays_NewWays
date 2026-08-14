@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "interactuar": {
+      "trigger": "minecraft:player_interacted_with_entity"
+    }
+  },
+  "rewards": {
+    "function": "casual:evaluar_click"
+  }
+}

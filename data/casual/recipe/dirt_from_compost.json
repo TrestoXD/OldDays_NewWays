@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients" : [
+            "#minecraft:leaves",
+            "minecraft:rotten_flesh",
+            "minecraft:gravel"
+    ],
+    "result":{
+        "id": "minecraft:dirt",
+        "count": 2
+    }
+}

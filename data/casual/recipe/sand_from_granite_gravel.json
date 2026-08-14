@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:gravel",
+        "minecraft:granite"
+    ],
+    "result": {
+        "id": "minecraft:sand",
+        "count": 2
+    }
+}
