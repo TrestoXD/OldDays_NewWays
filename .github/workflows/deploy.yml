@@ -1,10 +1,15 @@
 name: Publicar Datapack Automatizado
 
 on:
-  workflow_dispatch: # <-- Esto habilita el botón manual en GitHub
+  workflow_dispatch:
+    inputs:
+      version_number:
+        description: 'Número de versión del Datapack (ej. 1.0.0)'
+        required: true
+        default: '1.0.0'
   push:
     branches:
-      - releases # Se activa automáticamente al hacer push o merge a 'releases'
+      - releases
 
 jobs:
   deploy:
@@ -15,8 +20,11 @@ jobs:
 
       - name: Crear archivo .ZIP del Datapack
         run: |
-          # Empaqueta la carpeta data, pack.mcmeta e imagen ignorando carpetas de Git
-          zip -r datapack_casual.zip data pack.mcmeta pack.png -x "*.git*" "*.github*"
+          # Si se activa por push usa '1.0.0' por defecto, si es manual usa el input
+          VERSION="${{ github.event.inputs.version_number || '1.0.0' }}"
+          
+          # Empaqueta usando el nombre dinámico: everyday-wear-1.0.0.zip
+          zip -r "everyday-wear-${VERSION}.zip" data pack.mcmeta pack.png -x "*.git*" "*.github*"
 
       - name: Publicar en CurseForge y Modrinth
         uses: Kir-Antipov/mc-publish@v3
@@ -29,11 +37,11 @@ jobs:
           curseforge-id: '1651937'
           modrinth-id: 'everyday-wear'
 
-          # Configuración del archivo
-          files: 'datapack_casual.zip' # <-- CORREGIDO: Ahora coincide exactamente con el nombre de arriba
-          version: '1.0.0'
+          # Configuración del archivo dinámica unificada
+          files: 'everyday-wear-${{ github.event.inputs.version_number || "1.0.0" }}.zip'
+          version: '${{ github.event.inputs.version_number || "1.0.0" }}'
           version-type: 'release' # Puede ser: release, beta, alpha
 
-          # Compatibilidad
+          # Compatibilidad corregida para la versión de Minecraft
           game-versions: '26.2'
           loaders: 'datapack'
