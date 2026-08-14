@@ -6,6 +6,15 @@ on:
         description: 'Número de versión del Datapack (ej. 1.1)'
         required: true
         default: '1.1'
+      game_version_select:
+        description: 'Versión objetivo de Minecraft'
+        type: choice
+        required: true
+        default: '26.2'
+        options:
+          - '26.2'
+          - '26.1'
+          - '26.0'
       changelog:
         description: 'Notas de la versión (Changelog)'
         required: true
@@ -34,14 +43,14 @@ jobs:
           curseforge-id: '1651937'
           modrinth-id: 'everyday-wear'
           
-          # Archivos y versiones
+          # Archivos y versiones del datapack
           files: "everyday-wear-${{ github.event.inputs.version_number }}.zip"
           version: "${{ github.event.inputs.version_number }}"
           version-type: 'release' 
           
-          # NUEVO: Envía el texto ingresado en la interfaz al changelog de las plataformas
+          # Changelog dinámico integrado
           changelog: "${{ github.event.inputs.changelog }}"
           
-          # Versiones de Minecraft y cargador
-          game-versions: '1.21'
+          # NUEVO: Selector dinámico que respeta la versión elegida (por defecto 26.2)
+          game-versions: "${{ github.event.inputs.game_version_select }}"
           loaders: 'datapack'
