@@ -1,0 +1,38 @@
+name: Publicar Datapack Automatizado
+
+on:
+  push:
+    branches:
+      - releases # Solo se activa cuando subes o haces un merge hacia 'releases'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Crear archivo .ZIP del Datapack
+        run: |
+          # Empaqueta la carpeta data, el mcmeta y la imagen del pack ignorando archivos de Git
+          zip -r datapack_casual.zip data pack.mcmeta pack.png -x "*.git*" "*.github*"
+
+      - name: Publicar en CurseForge y Modrinth
+        uses: hypherionmc/mod-publisher@v2
+        with:
+          # Claves secretas de GitHub
+          curseforge-auth-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          modrinth-auth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+          # IDs de tus proyectos (Cámbialos por los tuyos)
+          curseforge-id: '1234567'       # Reemplaza con tu ID numérico de CurseForge
+          modrinth-id: 'abc123xyz'       # Reemplaza con tu Project ID o Slug de Modrinth
+
+          # Configuración del archivo
+          files: 'datapack_casual.zip'
+          version-type: 'release'        # Puede ser: release, beta, alpha
+
+          # Compatibilidad de Minecraft
+          game-versions: '1.21.4'        # Cambia a la versión objetivo de tu datapack
+          loaders: 'datapack'
