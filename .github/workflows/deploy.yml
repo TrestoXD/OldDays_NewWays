@@ -30,9 +30,9 @@ jobs:
           modrinth-id: 'everyday-wear'
 
           # Configuración del archivo
-          files: 'datapack_casual.zip'
+          files: 'casual.zip'
           version-type: 'release'        # Puede ser: release, beta, alpha
 
           # Compatibilidad de Minecraft
-          game-versions: '1.21.4'        # Cambia a la versión objetivo de tu datapack
+          game-versions: '26.2'        # Cambia a la versión objetivo de tu datapack
           loaders: 'datapack'
