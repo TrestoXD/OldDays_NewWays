@@ -1,0 +1,22 @@
+{
+    "criteria": {
+        "hit_anvil":{
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "entity": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific/player"
+                            "nbt": "{Tags:[\"forge_anvil\"]}"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "casual:forge/check_hammer"
+    }
+}

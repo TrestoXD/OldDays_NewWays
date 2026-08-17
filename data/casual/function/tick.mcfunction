@@ -1,0 +1,1 @@
+execute as @a[scores={forge_cooldown=1..}] run scoreboard players remove @s forge_cooldown 1
