@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "CSC",
+        "CSC",
+        " S "
+    ],
+    "key": {
+        "C": "minecraft:iron_ingot",
+        "S": "minecraft:stick"
+    },
+  "result": {
+    "id": "minecraft:iron_axe",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": { "hammer": 1, "hammer_type": "pro" },
+      "minecraft:item_name": "Smither Hammer",
+      "minecraft:use_remainder": {
+        "id": "minecraft:iron_axe",
+        "components": {
+          "minecraft:custom_data": { "hammer": 1, "hammer_type": "pro" },
+          "minecraft:item_name": "Smither Hammer",
+          "minecraft:damage": 1
+        }
+      }
+    }
+  }
+}

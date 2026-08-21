@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "near_anvil_block": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "slots": {
+                "weapon.mainhand": {
+                  "predicates": {
+                    "minecraft:custom_data": "{hammer:1}"
+                  }
+                }
+              },
+              "location": {
+                "block": {
+                  "blocks": ["minecraft:anvil", "minecraft:chipped_anvil", "minecraft:damaged_anvil"]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "casual:forge/anchor_anvil"
+  }
+}

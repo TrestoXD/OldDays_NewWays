@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "quench_metal": {
+      "trigger": "minecraft:any_block_use",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": ["minecraft:water_cauldron"]
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "casual:forge/cool_down_metal"
+  }
+}
