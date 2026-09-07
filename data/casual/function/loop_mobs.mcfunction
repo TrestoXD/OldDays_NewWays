@@ -6,7 +6,7 @@ schedule function casual:loop_mobs 1s
 # =========================================================================
 # 1. ZOMBIES (Rápidos, con rango y rompen puertas)
 # =========================================================================
-execute as @e[type=zombie,tag=!modified_zombie] run attribute @s minecraft:movement_speed base set 0.35
+execute as @e[type=zombie,tag=!modified_zombie] run attribute @s minecraft:movement_speed base set 0.3
 execute as @e[type=zombie,tag=!modified_zombie] run attribute @s minecraft:follow_range base set 40.0
 execute as @e[type=zombie,tag=!modified_zombie] run data merge entity @s {CanBreakDoors:1b}
 tag @e[type=zombie,tag=!modified_zombie] add modified_zombie

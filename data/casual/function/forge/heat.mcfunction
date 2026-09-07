@@ -1,2 +1,0 @@
-# 1. Detectar ítems de mineral frío cerca de una fogata encendida
-execute as @e[type=item,tag=mineral_frio] at @s if block ~ ~-0.5 ~ minecraft:campfire[lit=true] run function casual:forge/process_heating
