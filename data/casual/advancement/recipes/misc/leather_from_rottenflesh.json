@@ -1,0 +1,25 @@
+{
+	"parent": "minecraft:recipes/root",
+	"rewards": {
+		"recipes": [
+			"casual:recicle/leather_from_rottenflesh"
+		]
+	},
+	"criteria": {
+		"has_flesh": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:rotten_flesh"
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_flesh"
+		]
+	]
+}
