@@ -1,4 +1,4 @@
-msg @s [Debug] Blood Moon activated. Applying buffs to undead.
+msg @s [Debug] Breaking Dawn Moon activated. Applying buffs to undead.
 
 effect give @e[type=#minecraft:undead] minecraft:strength 2 1 true
 effect give @e[type=#minecraft:undead] minecraft:resistance 2 0 true
