@@ -30,7 +30,7 @@ jobs:
       - name: Crear archivo .ZIP del Datapack
         run: |
           VERSION="${{ github.event.inputs.version_number }}"
-          zip -r "everyday-wear-${VERSION}.zip" data pack.mcmeta pack.png -x "*.git*" "*.github*"
+          zip -r "olddays-newways-${VERSION}.zip" data pack.mcmeta pack.png -x "*.git*" "*.github*"
 
       - name: Publicar en CurseForge y Modrinth
         uses: Kir-Antipov/mc-publish@v3
@@ -41,10 +41,10 @@ jobs:
           
           # IDs de tus proyectos
           curseforge-id: '1651937'
-          modrinth-id: 'everyday-wear'
+          modrinth-id: 'olddays-newways'
           
           # Archivos y versiones del datapack
-          files: "everyday-wear-${{ github.event.inputs.version_number }}.zip"
+          files: "olddays-newways-${{ github.event.inputs.version_number }}.zip"
           version: "${{ github.event.inputs.version_number }}"
           version-type: 'release' 
           
