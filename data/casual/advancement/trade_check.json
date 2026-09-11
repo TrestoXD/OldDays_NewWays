@@ -5,6 +5,6 @@
     }
   },
   "rewards": {
-    "function": "casual:evaluar_click"
+    "function": "casual:villagers/evaluar_click"
   }
 }
