@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "is_full_moon_night": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:time_check",
+            "clock": "minecraft:overworld",
+            "value": {
+              "min": 13000,
+              "max": 23000
+            },
+            "period": 24000
+          },
+          {
+            "condition": "minecraft:time_check",
+            "clock": "minecraft:overworld",
+            "value": 0,
+            "period": 192000
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "casual:mooncicles/full_moon_events"
+  }
+}

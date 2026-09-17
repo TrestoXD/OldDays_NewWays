@@ -1,0 +1,25 @@
+{
+	"parent": "minecraft:recipes/root",
+	"rewards": {
+		"recipes": [
+			"casual:recicle/dirt_from_compost"
+		]
+	},
+	"criteria": {
+		"has_dirt": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:dirt"
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_dirt"
+		]
+	]
+}

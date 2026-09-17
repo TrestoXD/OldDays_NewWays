@@ -6,6 +6,7 @@ on:
         description: 'Número de versión del Datapack (ej. 1.1)'
         required: true
         default: '1.1'
+        type: string
       game_version_select:
         description: 'Versión objetivo de Minecraft'
         type: choice
@@ -16,7 +17,7 @@ on:
           - '26.1'
           - '26.0'
       changelog:
-        description: 'Notas de la versión (Changelog)'
+        description: 'Changelog (Usa \n para saltos de línea o escribe de corrido)'
         required: true
         default: 'Corrección de errores y mejoras generales.'
 
@@ -30,27 +31,26 @@ jobs:
       - name: Crear archivo .ZIP del Datapack
         run: |
           VERSION="${{ github.event.inputs.version_number }}"
-          zip -r "everyday-wear-${VERSION}.zip" data pack.mcmeta pack.png -x "*.git*" "*.github*"
+          zip -r "olddays-newways-${VERSION}.zip" data pack.mcmeta pack.png -x "*.git*" "*.github*"
 
       - name: Publicar en CurseForge y Modrinth
         uses: Kir-Antipov/mc-publish@v3
+        env:
+          # Almacenamos el changelog como variable de entorno del paso para proteger los caracteres especiales
+          CHANGELOG_TEXT: ${{ github.event.inputs.changelog }}
         with:
-          # Claves secretas de GitHub
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           
-          # IDs de tus proyectos
           curseforge-id: '1651937'
-          modrinth-id: 'everyday-wear'
+          modrinth-id: 'olddays-newways'
           
-          # Archivos y versiones del datapack
-          files: "everyday-wear-${{ github.event.inputs.version_number }}.zip"
+          files: "olddays-newways-${{ github.event.inputs.version_number }}.zip"
           version: "${{ github.event.inputs.version_number }}"
-          version-type: 'release' 
+          version-type: 'release'
           
-          # Changelog dinámico integrado
-          changelog: "${{ github.event.inputs.changelog }}"
+          # Invocamos de forma segura la variable protegida
+          changelog: ${{ env.CHANGELOG_TEXT }}
           
-          # NUEVO: Selector dinámico que respeta la versión elegida (por defecto 26.2)
           game-versions: "${{ github.event.inputs.game_version_select }}"
           loaders: 'datapack'

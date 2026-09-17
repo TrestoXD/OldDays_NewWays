@@ -1,0 +1,14 @@
+[
+  {
+    "condition": "minecraft:time_check",
+    "clock": "minecraft:overworld",
+    "value": 13000,
+    "period": 24000
+  },
+  {
+    "condition": "minecraft:time_check",
+    "clock": "minecraft:overworld",
+    "value": 13000,
+    "period": 192000
+  }
+]
