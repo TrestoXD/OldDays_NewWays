@@ -1,0 +1,25 @@
+{
+	"parent": "minecraft:recipes/root",
+	"rewards": {
+		"recipes": [
+			"olddaysnewways:recicle/gravel_from_cobblestone"
+		]
+	},
+	"criteria": {
+		"has_cobble": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:cobblestone"
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_cobble"
+		]
+	]
+}

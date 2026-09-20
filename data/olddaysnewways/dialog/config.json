@@ -1,0 +1,57 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "Old Days New Ways Configuration",
+    "color": "yellow",
+    "bold": true
+  },
+  "can_close_with_escape": true,
+  "pause": true,
+  "columns": 2,
+  "inputs": [
+    {
+      "type": "minecraft:number_range",
+      "key": "zombie_speed",
+      "label": "Zombie Speed",
+      "start": 10,
+      "end": 50,
+      "step": 5,
+      "initial": 25,
+      "width": 150
+    },
+    {
+      "type": "minecraft:number_range",
+      "key": "cave_spider_speed",
+      "label": "Cave Spider Speed",
+      "start": 20,
+      "end": 80,
+      "step": 5,
+      "initial": 50,
+      "width": 150
+    },
+    {
+      "type": "minecraft:number_range",
+      "key": "harvest_ticks",
+      "label": "Harvest Moon random tick",
+      "start": 10,
+      "end": 150,
+      "step": 5,
+      "initial": 30,
+      "width": 150
+    }
+  ],
+  "actions": [
+    {
+      "label": "Aplicar Cambios",
+      "action": {
+        "type": "minecraft:dynamic/run_command",
+        "template": "function olddaysnewways:config/apply_config {zombie:$(zombie_speed),spider:$(cave_spider_speed),harvest:$(harvest_ticks)}"
+      }
+    }
+  ],
+  "exit_action": {
+    "label": {
+      "translate": "gui.back"
+    }
+  }
+}
