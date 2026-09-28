@@ -6,13 +6,16 @@
         "player": {
           "type": "minecraft:time_check",
           "clock": "minecraft:overworld",
-          "value": 0,
-          "period": 192000
+          "value": {
+            "min": 13000,
+            "max": 23000
+          },
+          "period": 24000
         }
       }
     }
   },
   "rewards": {
-    "function": "olddaysnewways:mooncicles/moons/full_moon_detection"
+    "function": "olddaysnewways:mooncicles/full_moon_events"
   }
 }
