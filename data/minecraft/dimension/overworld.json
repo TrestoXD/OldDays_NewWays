@@ -34386,6 +34386,36 @@
         {
           "parameters": {
             "weirdness": [
+              0.4,
+              0.9
+            ],
+            "continentalness": [
+              -0.1,
+              0.4
+            ],
+            "erosion": [
+              -0.2,
+              0.3
+            ],
+            "temperature": [
+              -0.4,
+              -0.15
+            ],
+            "humidity": [
+              0.3, 
+              1
+            ],
+            "depth": [
+              0,
+              0
+            ],
+            "offset": 0
+          },
+          "biome": "minecraft:dappled_forest"
+        },
+        {
+          "parameters": {
+            "weirdness": [
               -0.26666668,
               -0.05
             ],
