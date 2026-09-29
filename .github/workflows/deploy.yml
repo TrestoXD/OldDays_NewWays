@@ -13,9 +13,10 @@ on:
         required: true
         default: '26.2'
         options:
+          - '26.4'
+          - '26.3'
           - '26.2'
           - '26.1'
-          - '26.0'
       changelog:
         description: 'Changelog (Usa \n para saltos de línea o escribe de corrido)'
         required: true
