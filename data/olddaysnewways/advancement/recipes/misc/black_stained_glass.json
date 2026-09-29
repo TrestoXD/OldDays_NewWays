@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "olddaysnewways:black_stained_glass"
+				"recipes": "olddaysnewways:black_stained_glass"
 			}
 		}
 	},
