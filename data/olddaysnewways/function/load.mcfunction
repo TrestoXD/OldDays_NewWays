@@ -9,7 +9,7 @@ scoreboard players set #config cave_spider_speed 50
 
 # MOOONS
 scoreboard objectives add harvestmoon_random_tickrate dummy
-scoreboard players set #config harvestmoon_random_tickrate 30
+scoreboard players set #config harvestmoon_random_tickrate 150
 
 # Minecarts
 datapack enable minecart_improvements
