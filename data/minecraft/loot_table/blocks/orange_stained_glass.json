@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "condition": "minecraft:tool/can_silk_touch",
+              "name": "minecraft:orange_stained_glass"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:orange_stained_glass",
+              "condition": {
+                "type": "minecraft:match_tool",
+                "predicate": {
+                  "components": {
+                    "minecraft:custom_data": {
+                      "silky": true
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "minecraft:blocks/orange_stained_glass"
+}

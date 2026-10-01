@@ -19,3 +19,6 @@ gamerule max_minecart_speed 20
 schedule function olddaysnewways:mobs/loop_mobs 1s
 scoreboard objectives add dummy dummy
 scoreboard objectives add boat_damage dummy
+
+# Silky
+scoreboard objectives add broken_ice minecraft.mined:minecraft.ice
