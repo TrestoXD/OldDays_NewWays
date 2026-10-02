@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:set_components",
+  "components": {
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "id": "olddaysnewways:copper_leggings",
+          "amount": 4,
+          "operation": "add_value",
+          "slot": "legs"
+        }
+      ],
+      "minecraft:custom_data": {
+        "copper": true
+      }
+    },
+  "condition": {
+    "type": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+          "legs": {
+            "items": "minecraft:copper_leggings"
+          }
+        }
+      }
+    }
+}

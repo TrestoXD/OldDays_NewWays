@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": "minecraft:copper_ingot"
+  },
+  "result": {
+    "id": "minecraft:copper_leggings",
+    "components": {
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "id": "better_copper_equipment:copper_leggings",
+          "amount": 4,
+          "operation": "add_value",
+          "slot": "legs"
+        }
+      ],
+      "minecraft:custom_data": {
+        "better_copper_equipment": true
+      }
+    },
+    "count": 1
+  },
+  "category": "equipment"
+}

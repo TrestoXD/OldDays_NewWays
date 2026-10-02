@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:set_components",
+  "components": {
+    "minecraft:attribute_modifiers": [
+      {
+        "type": "minecraft:armor",
+        "id": "olddaysnewways:copper_helmet",
+        "amount": 1.5,
+        "operation": "add_value",
+        "slot": "head"
+      }
+    ],
+    "minecraft:custom_data": {
+      "copper": true
+    }
+  },
+  "condition": {
+    "type": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "head": {
+            "items": "minecraft:copper_helmet"
+          }
+        }
+      }
+    }
+}
