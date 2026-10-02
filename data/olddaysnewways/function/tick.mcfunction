@@ -10,3 +10,6 @@ execute as @e[scores={boat_damage=20..}] at @s run function olddaysnewways:mobs/
 ## ICE
 execute as @a[scores={broken_ice=1..}] at @s if items entity @s weapon.mainhand golden_pickaxe[custom_data={silky:true}] anchored eyes run function olddaysnewways:raycast_ice
 scoreboard players set @a[scores={broken_ice=1..}] broken_ice 0
+
+# SLEEPING
+execute as @a[scores={sleeping_time=0}] at @s if predicate olddaysnewways:lowlight run function olddaysnewways:blocks/bed
