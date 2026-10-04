@@ -22,4 +22,3 @@ execute as @a[scores={sleeping_time=0,time_bed=0}] at @s if predicate olddaysnew
 execute as @a[scores={time_bed=1..}] run scoreboard players remove @s time_bed 1
 execute as @a[scores={time_bed=1}] at @s if predicate olddaysnewways:lowlight run function olddaysnewways:blocks/bed
 execute as @a[scores={sleeping_time=1}] run scoreboard players add @s time_bed 0
-
