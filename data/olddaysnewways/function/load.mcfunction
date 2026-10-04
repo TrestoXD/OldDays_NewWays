@@ -1,4 +1,3 @@
-
 # CONFIG
 
 ## MOBS
@@ -20,10 +19,16 @@ schedule function olddaysnewways:mobs/loop_mobs 1s
 scoreboard objectives add dummy dummy
 scoreboard objectives add boat_damage dummy
 
-# BEDS
 
-scoreboard objectives add sleeping minecraft.custom:minecraft.sleep_in_bed
+
+# BLOCKS
+
+## BEDS
 scoreboard objectives add sleeping_time minecraft.custom:minecraft.time_since_rest
+scoreboard objectives add time_bed dummy
 
-# SILKY
+## SILKY
 scoreboard objectives add broken_ice minecraft.mined:minecraft.ice
+
+## TOOLS
+schedule function olddaysnewways:items/schedule 1s replace
