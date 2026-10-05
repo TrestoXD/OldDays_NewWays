@@ -4,10 +4,6 @@
     {
       "chance": 0.3,
       "feature": "minecraft:fancy_oak_checked"
-    },
-    {
-      "chance": 0.3,
-      "feature": "minecraft:birch_checked"
     }
   ],
   "default": "minecraft:oak_checked"
