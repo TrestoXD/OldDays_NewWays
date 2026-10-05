@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:set_components",
+  "components": {
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "id": "olddaysnewways:copper_chestplate",
+          "amount": 5,
+          "operation": "add_value",
+          "slot": "chest"
+        }
+      ],
+      "minecraft:custom_data": {
+        "copper": true
+      }
+    },
+  "condition": {
+    "type": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+          "chest": {
+            "items": "minecraft:copper_chestplate"
+          }
+        }
+      }
+    }
+}

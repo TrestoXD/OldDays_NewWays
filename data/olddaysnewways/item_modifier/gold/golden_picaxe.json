@@ -1,0 +1,43 @@
+{
+    "type": "minecraft:set_components",
+    "components": {
+        "minecraft:attribute_modifiers": [
+            {
+                "type": "minecraft:mining_efficiency",
+                "id": "minecraft:base_efficiency",
+                "amount": 2,
+                "operation": "add_value",
+                "slot": "mainhand"
+            },
+            {
+                "type": "minecraft:attack_damage",
+                "id": "minecraft:base_attack_damage",
+                "amount": 2,
+                "operation": "add_value",
+                "slot": "mainhand"
+            },
+            {
+                "type": "minecraft:attack_speed",
+                "id": "minecraft:base_attack_speed",
+                "amount": -3.2,
+                "operation": "add_value",
+                "slot": "mainhand"
+            }
+        ],
+        "minecraft:custom_data": {
+            "silky": true
+        },
+        "minecraft:max_damage": 32
+  },
+    "condition": {
+        "type": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+            "equipment": {
+                "mainhand": {
+                    "items": "minecraft:golden_pickaxe"
+                }
+            }
+        }
+    }
+}

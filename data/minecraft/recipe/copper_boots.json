@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": "minecraft:copper_ingot"
+  },
+  "result": {
+    "id": "minecraft:copper_boots",
+    "components": {
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "id": "better_copper_equipment:copper_boots",
+          "amount": 1.5,
+          "operation": "add_value",
+          "slot": "feet"
+        }
+      ],
+      "minecraft:custom_data": {
+        "better_copper_equipment": true
+      }
+    },
+    "count": 1
+  },
+  "category": "equipment"
+}
