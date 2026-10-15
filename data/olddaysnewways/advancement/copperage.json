@@ -1,0 +1,23 @@
+{
+  "parent": "minecraft:story/upgrade_tools",
+  "criteria": {
+    "stone_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:copper_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Stop mining like a sucker with stone and get yourself some real metal.",
+    "icon": {
+      "id": "minecraft:copper_pickaxe"
+    },
+    "title": "Iron Dome, Copper Pick"
+  },
+  "sends_telemetry_event": true
+}
