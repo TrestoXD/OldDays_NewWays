@@ -20,7 +20,3 @@ execute as @e[type=cave_spider,tag=!proc_cave_spider] run attribute @s minecraft
 execute as @e[type=cave_spider,tag=!proc_cave_spider] run data merge entity @s {Health:4.0f}
 execute as @e[type=cave_spider,tag=!proc_cave_spider] run data modify entity @s attributes[{id:"minecraft:movement_speed"}].base set from storage olddaysnewways:temp cave_spider_velocity
 tag @e[type=cave_spider,tag=!proc_cave_spider] add proc_cave_spider
-
-# Creepers
-execute as @e[type=creeper,tag=!proc_creeper] run data merge entity @s {Fuse:25}
-tag @e[type=creeper,tag=!proc_creeper] add proc_creeper
