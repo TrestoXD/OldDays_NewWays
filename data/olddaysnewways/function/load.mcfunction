@@ -4,7 +4,7 @@
 scoreboard objectives add zombie_speed dummy
 scoreboard players set #config zombie_speed 25
 scoreboard objectives add cave_spider_speed dummy
-scoreboard players set #config cave_spider_speed 50
+scoreboard players set #config cave_spider_speed 30
 
 ## MOOONS
 scoreboard objectives add harvestmoon_random_tickrate dummy
@@ -18,10 +18,6 @@ gamerule max_minecart_speed 20
 schedule function olddaysnewways:mobs/loop_mobs 1s
 scoreboard objectives add dummy dummy
 scoreboard objectives add boat_damage dummy
-
-
-
-# BLOCKS
 
 ## BEDS
 scoreboard objectives add sleeping_time minecraft.custom:minecraft.time_since_rest
