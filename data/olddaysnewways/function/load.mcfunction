@@ -9,6 +9,8 @@ scoreboard players set #config cave_spider_speed 30
 ## MOOONS
 scoreboard objectives add harvestmoon_random_tickrate dummy
 scoreboard players set #config harvestmoon_random_tickrate 150
+scoreboard objectives add def_sleeprate dummy
+execute store result score #config def_sleeprate run gamerule minecraft:players_sleeping_percentage
 
 ## MINECARTS
 datapack enable minecart_improvements
