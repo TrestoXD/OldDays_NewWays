@@ -12,6 +12,11 @@ scoreboard players set #config harvestmoon_random_tickrate 150
 scoreboard objectives add def_sleeprate dummy
 execute store result score #config def_sleeprate run gamerule minecraft:players_sleeping_percentage
 
+# WEATHER
+execute if predicate olddaysnewways:morning run function olddaysnewways:weather/foggy_day
+execute unless predicate olddaysnewways:morning run schedule function olddaysnewways:weather/foggy_day 24000t replace
+scoreboard objectives add olddaysnewways_obj dummy
+
 ## MINECARTS
 datapack enable minecart_improvements
 gamerule max_minecart_speed 20
