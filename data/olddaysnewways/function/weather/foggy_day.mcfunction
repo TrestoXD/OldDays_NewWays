@@ -1,9 +1,17 @@
+# CHECK THE NEXT DAY :O
 schedule function olddaysnewways:weather/foggy_day 24000t replace
 
+
 time of olddaysnewways:foggy_clock set 0t
-time of olddaysnewways:foggy_clock pause
+data modify storage olddaysnewways:temp es_foggy set value 0b
 
-execute if predicate olddaysnewways:foggy_chance run time of olddaysnewways:foggy_clock rate 1.0
+execute if predicate olddaysnewways:foggy_chance run data modify storage olddaysnewways:temp es_foggy set value 1b
 
-execute if predicate olddaysnewways:foggy_chance run tellraw @a {"text":"[DEBUG] ¡Hoy ha salido día de NIEBLA!","color":"gold"}
-execute unless predicate olddaysnewways:foggy_chance run tellraw @a {"text":"[DEBUG] Hoy es un día despejado normal.","color":"gray"}
+execute if data storage olddaysnewways:temp {es_foggy:0b} run time of olddaysnewways:foggy_clock pause
+
+execute if data storage olddaysnewways:temp {es_foggy:1b} run time of olddaysnewways:foggy_clock rate 1
+execute if data storage olddaysnewways:temp {es_foggy:1b} run time of olddaysnewways:foggy_clock resume
+
+# DEBUG ONLY TEXTS
+#execute if data storage olddaysnewways:temp {es_foggy:1b} run tellraw @a {"text":"[DEBUG] ¡Hoy ha salido día de NIEBLA JUGOVOID!"}
+#execute if data storage olddaysnewways:temp {es_foggy:0b} run tellraw @a {"text":"[DEBUG] Hoy es un día despejado normal miñarro."}

@@ -1,4 +1,9 @@
 {
-  "type": "minecraft:random_chance",
-  "chance": 0.25
+  "type": "all_of",
+  "terms": [
+    {
+      "type": "minecraft:random_chance",
+      "chance": 0.25
+    }
+  ]
 }
