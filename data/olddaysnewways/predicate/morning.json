@@ -3,7 +3,7 @@
   "type": "minecraft:time_check",
   "value": {
     "min": 0,
-    "max": 10
+    "max": 40
   },
   "period": 24000
 }
